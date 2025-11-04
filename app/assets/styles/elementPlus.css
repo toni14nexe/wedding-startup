@@ -1,0 +1,35 @@
+/* BUTTON */
+
+.el-button {
+  font-family: 'Kugile', 'GreatVibesRegular', Arial, Helvetica, sans-serif;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px;
+}
+
+.el-button span {
+  padding-top: 10px;
+}
+
+.el-button--primary {
+  color: black !important;
+}
+
+.el-button--primary:hover {
+  color: darkgray !important;
+}
+
+/* TIMELINE */
+
+.el-timeline {
+  padding-left: 0;
+}
+
+.el-timeline-item__content,
+.el-timeline-item__timestamp {
+  color: white !important;
+  letter-spacing: 1.5px;
+}
+
+.el-timeline-item__timestamp {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

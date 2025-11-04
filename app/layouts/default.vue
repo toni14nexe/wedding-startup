@@ -32,7 +32,7 @@ import Footer from '@/components/layout/Footer.vue'
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 .content-wrapper {
   position: relative;

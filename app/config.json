@@ -1,0 +1,32 @@
+{
+  "title": "Lolek & Bolek",
+  "dateTime": "2026-12-30T17:30:00",
+  "textDate": "30. 12. 2026.",
+  "introductionText": "Zauvijek počinje ovdje",
+  "invitation": "<p>Zauvijek počinje ovdje</br>U danu punom nježnosti i radosti,</br>željeli bismo da budete uz nas</br>dok započinjemo naše zajedničko putovanje.</br></br>S vjerom, ljubavlju i osmijehom u srcu,</br>izgovorit ćemo svoje “da”</br>i proslaviti početak naše priče</br>okruženi dragim ljudima.</p>",
+  "activities": [
+    {
+      "content": "Okupljanje kod mladozenje",
+      "address": "Trg bana Josipa Jelačića 123A",
+      "timestamp": "13:00 h"
+    },
+    {
+      "content": "Okupljanje kod mladenke",
+      "address": "Trg bana Josipa Jelačića 123A",
+      "timestamp": "15:00 h"
+    },
+    {
+      "content": "Vjencanje - Crkva svetoga Antuna Padovanskog Nasice",
+      "address": "Trg bana Josipa Jelačića 123A",
+      "timestamp": "17:30 h"
+    },
+    {
+      "content": "Sala Glamour",
+      "address": "Trg bana Josipa Jelačića 123A",
+      "timestamp": "Od 19:00 h"
+    }
+  ],
+  "settings": {
+    "showCountdownTimer": true
+  }
+}

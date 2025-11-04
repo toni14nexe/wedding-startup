@@ -77,7 +77,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
 }
 a {

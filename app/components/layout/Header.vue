@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import HamburgerIcon from '@/assets/icons/HamburgerIcon.vue'
-import text from '@/text.json'
+import config from '@/config.json'
 
 const route = useRoute()
 const isMobileDrawerMenuOpen = ref(false)
@@ -18,7 +18,7 @@ watch(
   <header class="hidden-sm-and-down" v-motion-slide-top :duration="2000">
     <ElRow class="menu" justify="center">
       <ElCol :span="8" class="menu-wrapper" v-motion-slide-left :duration="1500" :delay="1000">
-        <span class="deskop-title">{{ text.title }}</span>
+        <span class="deskop-title">{{ config.title }}</span>
       </ElCol>
       <ElCol :span="8" align="center" class="menu-wrapper">
         <RouterLink
@@ -54,7 +54,7 @@ watch(
       </ElCol>
       <ElCol align="middle" :span="16" v-motion-slide-top :duration="1500" :delay="1500">
         <RouterLink to="/" class="mobile-title">
-          <h2>{{ text.title }}</h2>
+          <h2>{{ config.title }}</h2>
         </RouterLink>
       </ElCol>
       <ElCol :span="4" align="end" />
@@ -65,7 +65,7 @@ watch(
   <ElDrawer v-model="isMobileDrawerMenuOpen" direction="ltr" size="100%" :show-close="false">
     <template #header>
       <ElRow>
-        <h3 style="color: var(--el-color-primary)">{{ text.title }}</h3>
+        <h3>{{ config.title }}</h3>
       </ElRow>
     </template>
 
@@ -73,7 +73,7 @@ watch(
       <div class="drawer-container">
         <RouterLink
           to="/"
-          class="el-button drawer-button"
+          class="el-button drawer-button pt-16"
           :class="{
             'el-button--primary': 'index' === route.name,
           }"
@@ -84,7 +84,7 @@ watch(
         </RouterLink>
         <RouterLink
           to="/about"
-          class="el-button drawer-button"
+          class="el-button drawer-button pt-16"
           :class="{
             'el-button--primary': 'index' === route.name,
           }"
@@ -194,9 +194,8 @@ header {
 }
 .drawer-button {
   font-family: 'Kugile', 'GreatVibesRegular', Arial, Helvetica, sans-serif;
-  padding-top: 16px;
-  border: 1px solid var(--el-color-primary-light-5);
-  color: white;
+  border: 1px solid black;
+  color: black;
   --el-button-hover-border-color: var(--el-color-primary);
   background-color: var(--el-color-primary);
   height: 45px;
@@ -206,7 +205,8 @@ header {
   border-radius: 8px;
 }
 .drawer-button:hover {
-  background-color: var(--el-color-primary-light-3);
+  color: gray;
+  border-color: gray;
 }
 .drawer-button-text-wrapper {
   width: 100%;

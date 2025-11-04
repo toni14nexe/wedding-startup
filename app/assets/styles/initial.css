@@ -20,16 +20,16 @@ html {
   font-size: 28px;
 }
 
-/* :root {
-  --el-color-primary: #dd0000 !important;
-  --el-color-primary-dark-1: #cb0000 !important;
-  --el-color-primary-dark-2: #9a0000 !important;
-  --el-color-primary-light-1: #e13d3d !important;
-  --el-color-primary-light-3: #eb8080 !important;
-  --el-color-primary-light-5: #f2aaaa !important;
-  --el-color-primary-light-7: #f7d2d2 !important;
-  --el-color-primary-light-9: #fcf0f0 !important;
-} */
+:root {
+  --el-color-primary: #ffffff !important;
+  --el-color-primary-dark-1: #e6e6e6 !important;
+  --el-color-primary-dark-2: #cccccc !important;
+  --el-color-primary-light-1: #ffffff !important;
+  --el-color-primary-light-3: #ffffff !important;
+  --el-color-primary-light-5: #ffffff !important;
+  --el-color-primary-light-7: #ffffff !important;
+  --el-color-primary-light-9: #ffffff !important;
+}
 
 body {
   padding: 0;
