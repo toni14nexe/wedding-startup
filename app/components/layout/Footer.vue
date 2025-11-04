@@ -81,6 +81,7 @@ onUnmounted(() => {
 
 <style scoped>
 footer {
+  max-width: 1920px;
   padding: 32px 0;
   background-color: rgba(0, 0, 0, 0.5);
   border-top-left-radius: 8px;

@@ -23,7 +23,7 @@ function updateCountdown() {
   const distance = targetDate.getTime() - now
 
   if (distance <= 0) {
-    showCountdown.value = true
+    showCountdown.value = false
     return
   }
 
