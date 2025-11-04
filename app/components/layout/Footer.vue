@@ -47,7 +47,7 @@ onUnmounted(() => {
         </ElCol>
         <ElCol :xs="24" :sm="8">
           <ElRow class="footer-text details-wrapper-right">
-            <a href="tel:+385913067273">091 3067 273</a>
+            <a href="tel:+385913067273">+385 91 3067 273</a>
           </ElRow>
           <ElRow class="footer-text details-wrapper-right">
             <a href="mailto:info@innova-tech.hr">info@innova-tech.hr</a>
@@ -56,7 +56,15 @@ onUnmounted(() => {
       </ElRow>
 
       <ElRow justify="center" align="middle" v-motion-slide-top :duration="1000" :delay="1200">
-        <a href="/policy" class="footer-text">Politika privatnosti</a>
+        <ElCol :xs="24" :sm="8" align="center">
+          <NuxtLink to="/privacy-policy" class="footer-text">Politika privatnosti</NuxtLink>
+        </ElCol>
+        <ElCol :xs="24" :sm="8" align="center">
+          <NuxtLink to="/terms-of-use" class="footer-text">Uvjeti korištenja</NuxtLink>
+        </ElCol>
+        <ElCol :xs="24" :sm="8" align="center">
+          <NuxtLink to="/cookie-policy" class="footer-text">Pravila kolačića</NuxtLink>
+        </ElCol>
       </ElRow>
 
       <ElRow justify="center" class="ending-line" v-motion-slide-top :duration="1000" :delay="1500">
