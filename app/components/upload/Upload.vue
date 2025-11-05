@@ -53,13 +53,19 @@ const beforeUpload: UploadProps['beforeUpload'] = (file) => {
     file.type === 'image/gif'
 
   if (!isImage) {
-    ElMessage.error('Možete uploadati samo slike (jpg, jpeg, png, webp, gif).')
+    ElNotification({
+      message: 'Možete uploadati samo slike (jpg, jpeg, png, webp, gif).',
+      type: 'error',
+    })
     return false
   }
 
   const isLt4mb = file.size / 1024 / 1024 <= 4
   if (!isLt4mb) {
-    ElMessage.error('Slika ne smije biti veća od 4 MB.')
+    ElNotification({
+      message: 'Slika ne smije biti veća od 4 MB.',
+      type: 'error',
+    })
     return false
   }
 
@@ -80,7 +86,7 @@ async function uploadImage() {
     formData.append('upload_preset', uploadPreset)
     formData.append('folder', folder)
 
-    const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+    await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
       method: 'POST',
       body: formData,
     })
@@ -88,7 +94,7 @@ async function uploadImage() {
 
   fileList.value = []
   uploading.value = false
-  ElMessage({
+  ElNotification({
     message: 'Slike su uspješno uploadane 🎉',
     type: 'success',
   })

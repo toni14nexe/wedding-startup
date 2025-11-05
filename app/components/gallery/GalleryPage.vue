@@ -2,6 +2,7 @@
 import { dateTime } from '@/config.json'
 import { Loading, ArrowLeftBold, ArrowRightBold, CloseBold } from '@element-plus/icons-vue'
 import ImageWidget from './ImageWidget.vue'
+import type { CloudinaryResponse } from '~/types/CloudinaryTypes'
 
 const images = ref<string[]>([])
 const today = new Date()
@@ -14,19 +15,41 @@ const imagesLoading = ref(true)
 const currentIndex = ref()
 const dialogImageUrl = ref<any>('')
 const dialogVisible = ref(false)
+const pagination = ref<{
+  perPage: number
+  lastCursor: string | undefined
+  nextCursor: string
+  total: number
+}>({
+  perPage: 20,
+  lastCursor: undefined,
+  nextCursor: '',
+  total: 0,
+})
 
 const uploadState = computed(() => {
   if (today < weddingDay) return 'before'
-  fetchImages()
   if (today.getTime() === weddingDay.getTime() || today.getTime() === dayAfterWedding.getTime())
     return 'allowed'
   return 'after'
 })
 
+onMounted(() => {
+  if (uploadState.value !== 'before') fetchImages()
+})
+
 async function fetchImages() {
-  const res = await $fetch(`/api/cloudinary/list`)
-  images.value = res.resources.map((x: any) => x.secure_url)
-  imagesLoading.value = false
+  if (pagination.value.lastCursor !== pagination.value.nextCursor) {
+    imagesLoading.value = true
+    pagination.value.lastCursor = pagination.value.nextCursor
+    const res = await $fetch<CloudinaryResponse>(
+      `/api/cloudinary/list?perPage=${pagination.value.perPage}&nextCursor=${pagination.value.nextCursor}`
+    )
+    res.resources.map((image: any) => images.value.push(image.secure_url))
+    if (res.nextCursor) pagination.value.nextCursor = res.nextCursor
+    pagination.value.total = res.totalCount
+    imagesLoading.value = false
+  }
 }
 
 function openPreview(url: string) {
@@ -70,14 +93,35 @@ function switchToNextImage() {
   </div>
 
   <div v-else v-motion-slide-bottom :duration="1500" :delay="300">
-    <ElRow :gutter="12" class="mb-24">
-      <div v-if="imagesLoading">
-        <ElIcon class="rotating-icon"><Loading /></ElIcon>
-        Učitavanje galerije . . .
-      </div>
-      <ElCol v-else v-for="image in images" :key="image" :xs="12" :sm="6" class="image mb-12">
+    <ElRow
+      :gutter="12"
+      class="mb-24"
+      v-infinite-scroll="fetchImages"
+      :infinite-scroll-disabled="images.length >= pagination.total"
+    >
+      <ElCol
+        v-if="images.length"
+        v-for="image in images"
+        :key="image"
+        :xs="12"
+        :sm="6"
+        class="image mb-12"
+      >
         <ImageWidget :image="image" @click="openPreview" />
       </ElCol>
+    </ElRow>
+
+    <ElRow v-if="imagesLoading" justify="center" class="mt-24">
+      <ElIcon class="rotating-icon"><Loading /></ElIcon>
+      Učitavanje galerije . . .
+    </ElRow>
+
+    <ElRow
+      v-else-if="!imagesLoading && images.length < pagination.total"
+      justify="center"
+      class="mt-24"
+    >
+      <ElButton type="primary" size="large" @click="fetchImages">PRIKAZI VISE</ElButton>
     </ElRow>
   </div>
 
