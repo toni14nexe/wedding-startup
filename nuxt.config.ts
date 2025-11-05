@@ -6,6 +6,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@element-plus/nuxt'],
+  modules: ['@element-plus/nuxt', 'nuxt-viewport'],
   css: ['~/assets/styles/main.css'],
+  runtimeConfig: {
+    public: {
+      cloudinaryUploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
+      cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
+      cloudinaryFolder: process.env.CLOUDINARY_FOLDER,
+    },
+  },
 })

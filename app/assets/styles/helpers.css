@@ -2,6 +2,39 @@
   width: 100%;
 }
 
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
 .pt-16 {
   padding-top: 16px !important;
+}
+
+/* PREVIEW IMAGE DIALOG */
+
+.gallery-arrow-wrapper-left,
+.gallery-arrow-wrapper-right {
+  background-color: rgb(70, 70, 70);
+  color: white !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 100%;
+  transition: 0.2s ease-in-out;
+  opacity: 0.5;
+  position: absolute !important;
+  top: calc(50% - 18px);
+}
+
+.gallery-arrow-wrapper-right {
+  right: 0;
+}
+
+.gallery-arrow-wrapper-left:hover,
+.gallery-arrow-wrapper-right:hover {
+  background-color: rgb(120, 120, 120) !important;
+  cursor: pointer;
 }

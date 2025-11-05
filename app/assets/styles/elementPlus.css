@@ -33,3 +33,40 @@
 .el-timeline-item__timestamp {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+/* UPLOAD */
+
+.el-upload {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  transition: 0.2s ease-in-out;
+}
+
+.el-upload:hover {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  transition: 0.2s ease-in-out;
+}
+
+.el-upload-list {
+  display: flex;
+  gap: 12px;
+}
+
+.el-upload-list--picture-card {
+  justify-content: center;
+}
+
+.el-upload-list__item {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  margin: 0 !important;
+}
+
+.el-upload-list__item-status-label {
+  display: none !important;
+}
+
+/* DIALOG */
+
+.el-dialog {
+  padding: 16px 0 !important;
+  background-color: black !important;
+}

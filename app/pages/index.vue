@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import IntroductionText from '~/components/layout/shared/IntroductionText.vue'
-import CountdownTimer from '~/components/layout/shared/CountdownTimer.vue'
+import IntroductionText from '~/components/shared/IntroductionText.vue'
+import CountdownTimer from '~/components/shared/CountdownTimer.vue'
 import config from '@/config.json'
 
 const invitationRef = ref<HTMLElement | null>(null)

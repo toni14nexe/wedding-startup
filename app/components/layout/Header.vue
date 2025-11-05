@@ -39,6 +39,15 @@ watch(
           :delay="1500"
           >GALERIJA</RouterLink
         >
+        <RouterLink
+          to="/upload"
+          class="big-link"
+          :class="{ 'active-big-link': route.path === '/upload' }"
+          v-motion-slide-right
+          :duration="1500"
+          :delay="1500"
+          >UPLOAD</RouterLink
+        >
       </ElCol>
       <ElCol :span="8" />
     </ElRow>
@@ -71,27 +80,18 @@ watch(
 
     <template #default>
       <div class="drawer-container">
-        <RouterLink
-          to="/"
-          class="el-button drawer-button pt-16"
-          :class="{
-            'el-button--primary': 'index' === route.name,
-          }"
-        >
+        <RouterLink to="/" class="el-button drawer-button pt-16">
           <ElRow class="drawer-button-text-wrapper" align="middle" justify="center">
             NASLOVNICA
           </ElRow>
         </RouterLink>
-        <RouterLink
-          to="/about"
-          class="el-button drawer-button pt-16"
-          :class="{
-            'el-button--primary': 'index' === route.name,
-          }"
-        >
+        <RouterLink to="/gallery" class="el-button drawer-button pt-16">
           <ElRow class="drawer-button-text-wrapper" align="middle" justify="center">
             GALERIJA
           </ElRow>
+        </RouterLink>
+        <RouterLink to="/upload" class="el-button drawer-button pt-16">
+          <ElRow class="drawer-button-text-wrapper" align="middle" justify="center"> UPLOAD </ElRow>
         </RouterLink>
       </div>
     </template>

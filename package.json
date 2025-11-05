@@ -12,12 +12,15 @@
   },
   "dependencies": {
     "@vueuse/motion": "^3.0.3",
+    "cloudinary": "^2.8.0",
     "nuxt": "^4.2.0",
+    "nuxt-viewport": "^2.3.1",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.1.4",
+    "@types/node": "^24.10.0",
     "@vue/eslint-config-prettier": "^10.2.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1"
