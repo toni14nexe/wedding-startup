@@ -33,6 +33,10 @@ const uploadState = computed(() => {
     <p v-motion-slide-left :duration="1500" :delay="300">Ovdje možete uploadati fotografije 🎉</p>
     <Upload />
   </div>
+
+  <div v-else-if="uploadState === 'after'">
+    <p v-motion-slide-left :duration="1500" :delay="300">Uploadanje više nije dozvoljeno!</p>
+  </div>
 </template>
 
 <style lang="css" scoped></style>

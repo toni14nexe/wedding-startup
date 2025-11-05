@@ -7,9 +7,11 @@ import Footer from '@/components/layout/Footer.vue'
   <div class="background-black" />
   <div class="background-image" />
   <div class="content-wrapper">
-    <Header />
-    <NuxtPage />
-    <Footer />
+    <ClientOnly>
+      <Header />
+      <NuxtPage />
+      <Footer />
+    </ClientOnly>
   </div>
 </template>
 
@@ -28,7 +30,7 @@ import Footer from '@/components/layout/Footer.vue'
   background-color: black;
 }
 .background-image {
-  background-image: url('background.jpg');
+  background-image: url('/background.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

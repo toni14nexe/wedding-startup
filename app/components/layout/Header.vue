@@ -45,7 +45,7 @@ watch(
           :class="{ 'active-big-link': route.path === '/upload' }"
           v-motion-slide-right
           :duration="1500"
-          :delay="1500"
+          :delay="2000"
           >UPLOAD</RouterLink
         >
       </ElCol>
