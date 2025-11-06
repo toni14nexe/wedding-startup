@@ -100,10 +100,12 @@ a {
 .details-wrapper-left {
   justify-content: start;
   margin-left: 20%;
+  margin-top: 10px;
 }
 .details-wrapper-right {
   justify-content: end;
   margin-right: 20%;
+  margin-top: 10px;
 }
 .logo-wrapper {
   width: 140px;
@@ -123,10 +125,12 @@ a {
 @media (max-width: 768px) {
   .details-wrapper-left {
     justify-content: center;
+    text-align: center;
     margin-left: 0;
   }
   .details-wrapper-right {
     justify-content: center;
+    text-align: center;
     margin-right: 0;
   }
 }
