@@ -3,7 +3,7 @@
     width="1100"
     height="800"
     viewBox="0 0 1100 800"
-    fill="#409eff"
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g id="SingleElement">

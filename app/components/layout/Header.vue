@@ -180,6 +180,7 @@ header {
 .hamburger-icon {
   margin-top: 13px;
   cursor: pointer;
+  color: white;
 }
 .mobile-title {
   color: var(--el-color-primary);
