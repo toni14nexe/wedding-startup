@@ -11,7 +11,7 @@ let interval: number | undefined
 
 onMounted(() => {
   updateCountdown()
-  interval = setInterval(updateCountdown, 1000)
+  interval = Number(setInterval(updateCountdown, 1000))
 })
 
 onUnmounted(() => {
@@ -35,29 +35,36 @@ function updateCountdown() {
 </script>
 
 <template>
-  <div class="countdown-container" v-if="showCountdown">
-    <div class="countdown-wrapper">
-      {{ countdownDays }}
-      <br />
-      <span class="time-zone">DAN</span>
-    </div>
-    <div class="countdown-divider" />
-    <div class="countdown-wrapper">
-      {{ countdownHours }}
-      <br />
-      <span class="time-zone">SAT</span>
-    </div>
-    <div class="countdown-divider" />
-    <div class="countdown-wrapper">
-      {{ countdownMin }}
-      <br />
-      <span class="time-zone">MIN</span>
-    </div>
-    <div class="countdown-divider" />
-    <div class="countdown-wrapper">
-      {{ countdownSec }}
-      <br />
-      <span class="time-zone">SEK</span>
+  <div>
+    <div class="countdown-container" v-if="showCountdown">
+      <ElRow justify="center">
+        <span class="mt-24">VJENČANJE</span>
+      </ElRow>
+      <div class="countdown-time-container">
+        <div class="countdown-wrapper">
+          {{ countdownDays }}
+          <br />
+          <span class="time-zone">DAN</span>
+        </div>
+        <div class="countdown-divider" />
+        <div class="countdown-wrapper">
+          {{ countdownHours }}
+          <br />
+          <span class="time-zone">SAT</span>
+        </div>
+        <div class="countdown-divider" />
+        <div class="countdown-wrapper">
+          {{ countdownMin }}
+          <br />
+          <span class="time-zone">MIN</span>
+        </div>
+        <div class="countdown-divider" />
+        <div class="countdown-wrapper">
+          {{ countdownSec }}
+          <br />
+          <span class="time-zone">SEK</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -65,11 +72,15 @@ function updateCountdown() {
 <style scoped>
 .countdown-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid white;
   border-radius: 8px;
   opacity: 0.8;
+}
+.countdown-time-container {
+  display: flex;
 }
 .countdown-wrapper {
   padding: 12px 0;
