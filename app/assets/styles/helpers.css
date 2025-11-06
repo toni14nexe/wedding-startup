@@ -10,6 +10,10 @@
   margin-bottom: 12px;
 }
 
+.mr-8 {
+  margin-right: 8px;
+}
+
 .pt-16 {
   padding-top: 16px !important;
 }
@@ -36,5 +40,20 @@
 .gallery-arrow-wrapper-left:hover,
 .gallery-arrow-wrapper-right:hover {
   background-color: rgb(120, 120, 120) !important;
+  cursor: pointer;
+}
+
+.gallery-download-wrapper {
+  position: absolute !important;
+  top: -20px;
+  right: 60px;
+  transition: 0.1s ease-in-out;
+  color: var(--el-color-info) !important;
+}
+
+.gallery-download-wrapper:hover {
+  opacity: 1;
+  transition: 0.1s ease-in-out;
+  color: white !important;
   cursor: pointer;
 }

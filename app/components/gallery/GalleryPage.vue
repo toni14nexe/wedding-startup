@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { dateTime } from '@/config.json'
-import { Loading, ArrowLeftBold, ArrowRightBold, CloseBold } from '@element-plus/icons-vue'
+import {
+  Loading,
+  ArrowLeftBold,
+  ArrowRightBold,
+  CloseBold,
+  Download,
+} from '@element-plus/icons-vue'
 import ImageWidget from './ImageWidget.vue'
 import type { CloudinaryResponse } from '~/types/CloudinaryTypes'
 
@@ -11,7 +17,10 @@ const weddingDay = new Date(dateTime)
 weddingDay.setHours(0, 0, 0, 0)
 const dayAfterWedding = new Date(weddingDay)
 dayAfterWedding.setDate(weddingDay.getDate() + 1)
-const imagesLoading = ref(true)
+const loading = ref({
+  images: true,
+  download: false,
+})
 const currentIndex = ref()
 const dialogImageUrl = ref<any>('')
 const dialogVisible = ref(false)
@@ -40,7 +49,7 @@ onMounted(() => {
 
 async function fetchImages() {
   if (pagination.value.lastCursor !== pagination.value.nextCursor) {
-    imagesLoading.value = true
+    loading.value.images = true
     pagination.value.lastCursor = pagination.value.nextCursor
     const res = await $fetch<CloudinaryResponse>(
       `/api/cloudinary/list?perPage=${pagination.value.perPage}&nextCursor=${pagination.value.nextCursor}`
@@ -48,7 +57,7 @@ async function fetchImages() {
     res.resources.map((image: any) => images.value.push(image.secure_url))
     if (res.nextCursor) pagination.value.nextCursor = res.nextCursor
     pagination.value.total = res.totalCount
-    imagesLoading.value = false
+    loading.value.images = false
   }
 }
 
@@ -73,6 +82,27 @@ function switchToNextImage() {
   if (!list.length) return
   currentIndex.value = (currentIndex.value + 1 + list.length) % list.length
   dialogImageUrl.value = list[currentIndex.value]
+}
+
+async function downloadImage() {
+  loading.value.download = true
+  const url = dialogImageUrl.value
+  try {
+    const response = await fetch(url)
+    const blob = await response.blob()
+    const blobUrl = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = blobUrl
+    link.download = url.split('/').pop() || 'image.jpg'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(blobUrl)
+  } catch (err) {
+    console.error('Download failed:', err)
+  } finally {
+    loading.value.download = false
+  }
 }
 </script>
 
@@ -111,13 +141,13 @@ function switchToNextImage() {
       </ElCol>
     </ElRow>
 
-    <ElRow v-if="imagesLoading" justify="center" class="mt-24">
+    <ElRow v-if="loading.images" justify="center" class="mt-24">
       <ElIcon class="rotating-icon"><Loading /></ElIcon>
       Učitavanje galerije . . .
     </ElRow>
 
     <ElRow
-      v-else-if="!imagesLoading && images.length < pagination.total"
+      v-else-if="!loading.images && images.length < pagination.total"
       justify="center"
       class="mt-24"
     >
@@ -147,6 +177,14 @@ function switchToNextImage() {
         @click="switchToNextImage"
       >
         <ArrowRightBold />
+      </ElIcon>
+      <ElIcon
+        :size="24"
+        class="gallery-download-wrapper"
+        :disabled="loading.download"
+        @click="downloadImage"
+      >
+        <Download />
       </ElIcon>
     </ElRow>
   </ElDialog>
