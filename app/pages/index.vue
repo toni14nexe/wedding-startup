@@ -11,6 +11,14 @@ function scrollToInvitation() {
     block: 'start',
   })
 }
+
+function getDate(dateTime: string) {
+  const date = new Date(dateTime)
+  const day = String(date.getDate()).padStart(2, '0')
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const year = date.getFullYear()
+  return `${day}. ${month}. ${year}.`
+}
 </script>
 
 <template>
@@ -18,7 +26,7 @@ function scrollToInvitation() {
     <IntroductionText
       :title="config.title"
       :text="config.introductionText"
-      :text2="config.textDate"
+      :text2="getDate(config.dateTime)"
       button-text="POZIVNICA"
       @button-click="scrollToInvitation"
     />
