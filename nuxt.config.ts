@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   css: ['~/assets/styles/main.css'],
   runtimeConfig: {
     public: {
+      appBaseUrl: process.env.APP_BASE_URL,
       cloudinaryUploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
       cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
       cloudinaryFolder: process.env.CLOUDINARY_FOLDER,
