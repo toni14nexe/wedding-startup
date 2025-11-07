@@ -36,12 +36,7 @@ const pagination = ref<{
   total: 0,
 })
 
-const uploadState = computed(() => {
-  if (today < weddingDay) return 'before'
-  if (today.getTime() === weddingDay.getTime() || today.getTime() === dayAfterWedding.getTime())
-    return 'allowed'
-  return 'after'
-})
+const uploadState = computed(() => getUploadState(dateTime))
 
 onMounted(() => {
   if (uploadState.value !== 'before') fetchImages()

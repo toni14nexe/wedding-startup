@@ -7,6 +7,8 @@ import config from '@/config.json'
 const route = useRoute()
 const isMobileDrawerMenuOpen = ref(false)
 
+const uploadState = computed(() => getUploadState(config.dateTime))
+
 watch(
   () => route.path,
   () => (isMobileDrawerMenuOpen.value = false)
@@ -40,6 +42,7 @@ watch(
           >GALERIJA</RouterLink
         >
         <RouterLink
+          v-if="uploadState !== 'after'"
           to="/upload"
           class="big-link"
           :class="{ 'active-big-link': route.path === '/upload' }"
@@ -90,7 +93,11 @@ watch(
             GALERIJA
           </ElRow>
         </RouterLink>
-        <RouterLink to="/upload" class="el-button drawer-button pt-16">
+        <RouterLink
+          v-if="uploadState !== 'after'"
+          to="/upload"
+          class="el-button drawer-button pt-16"
+        >
           <ElRow class="drawer-button-text-wrapper" align="middle" justify="center"> UPLOAD </ElRow>
         </RouterLink>
       </div>

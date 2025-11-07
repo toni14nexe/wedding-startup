@@ -2,19 +2,7 @@
 import Upload from '../upload/Upload.vue'
 import { dateTime } from '@/config.json'
 
-const today = new Date()
-today.setHours(0, 0, 0, 0)
-const weddingDay = new Date(dateTime)
-weddingDay.setHours(0, 0, 0, 0)
-const dayAfterWedding = new Date(weddingDay)
-dayAfterWedding.setDate(weddingDay.getDate() + 1)
-
-const uploadState = computed(() => {
-  if (today < weddingDay) return 'before'
-  if (today.getTime() === weddingDay.getTime() || today.getTime() === dayAfterWedding.getTime())
-    return 'allowed'
-  return 'after'
-})
+const uploadState = computed(() => getUploadState(dateTime))
 </script>
 
 <template>

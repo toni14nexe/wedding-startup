@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import UploadPage from '~/components/upload/UploadPage.vue'
+import { dateTime } from '@/config.json'
+
+const router = useRouter()
+
+const uploadState = computed(() => getUploadState(dateTime))
+
+onMounted(() => {
+  if (uploadState.value === 'after') router.push('/')
+})
 </script>
 
 <template>
