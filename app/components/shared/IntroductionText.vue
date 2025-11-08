@@ -54,7 +54,7 @@ h1,
 p {
   margin: 0;
   color: white;
-  font-family: 'GreatVibesRegular';
+  font-family: 'ItaliannoRegular';
   letter-spacing: 2px;
 }
 p {

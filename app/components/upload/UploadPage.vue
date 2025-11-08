@@ -27,4 +27,10 @@ const uploadState = computed(() => getUploadState(dateTime))
   </div>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 18px;
+  }
+}
+</style>

@@ -128,7 +128,7 @@ async function uploadImage() {
       :loading="uploading"
       @click="uploadImage"
     >
-      Upload
+      UPLOAD
     </ElButton>
   </ElRow>
 

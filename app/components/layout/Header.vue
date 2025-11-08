@@ -77,18 +77,26 @@ watch(
   <ElDrawer v-model="isMobileDrawerMenuOpen" direction="ltr" size="100%" :show-close="false">
     <template #header>
       <ElRow>
-        <h3>{{ config.title }}</h3>
+        <h3 class="drawer-title">{{ config.title }}</h3>
       </ElRow>
     </template>
 
     <template #default>
       <div class="drawer-container">
-        <RouterLink to="/" class="el-button drawer-button pt-16">
+        <RouterLink
+          to="/"
+          class="el-button drawer-button"
+          :class="{ 'drawer-button-active': route.name === 'index' }"
+        >
           <ElRow class="drawer-button-text-wrapper" align="middle" justify="center">
             NASLOVNICA
           </ElRow>
         </RouterLink>
-        <RouterLink to="/gallery" class="el-button drawer-button pt-16">
+        <RouterLink
+          to="/gallery"
+          class="el-button drawer-button"
+          :class="{ 'drawer-button-active': route.name === 'gallery' }"
+        >
           <ElRow class="drawer-button-text-wrapper" align="middle" justify="center">
             GALERIJA
           </ElRow>
@@ -96,7 +104,8 @@ watch(
         <RouterLink
           v-if="uploadState !== 'after'"
           to="/upload"
-          class="el-button drawer-button pt-16"
+          class="el-button drawer-button"
+          :class="{ 'drawer-button-active': route.name === 'upload' }"
         >
           <ElRow class="drawer-button-text-wrapper" align="middle" justify="center"> UPLOAD </ElRow>
         </RouterLink>
@@ -135,6 +144,8 @@ header {
   color: var(--el-color-primary);
   text-decoration: underline;
   text-underline-offset: 16px;
+  font-family: 'ItaliannoRegular';
+  letter-spacing: 2px;
 }
 .big-link {
   position: relative;
@@ -185,23 +196,28 @@ header {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .hamburger-icon {
-  margin-top: 13px;
   cursor: pointer;
   color: white;
 }
 .mobile-title {
   color: var(--el-color-primary);
   text-decoration: none;
-  font-size: 16px;
-  font-family: Kugile;
+  font-size: 20px;
+  font-family: 'ItaliannoRegular';
+  letter-spacing: 2px;
 }
 .drawer-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+.drawer-title {
+  font-family: 'ItaliannoRegular';
+  font-size: 40px;
+  letter-spacing: 2px;
+}
 .drawer-button {
-  font-family: 'Kugile', 'GreatVibesRegular', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', 'ItaliannoRegular', Arial, Helvetica, sans-serif;
   border: 1px solid black;
   color: black;
   --el-button-hover-border-color: var(--el-color-primary);
@@ -215,6 +231,10 @@ header {
 .drawer-button:hover {
   color: gray;
   border-color: gray;
+}
+.drawer-button-active {
+  background-color: black;
+  color: white;
 }
 .drawer-button-text-wrapper {
   width: 100%;

@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'GreatVibesRegular';
-  src: url('../fonts/GreatVibesRegular.ttf') format('truetype');
+  font-family: 'ItaliannoRegular';
+  src: url('../fonts/ItaliannoRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Kugile';
-  src: url('../fonts/Kugile.ttf') format('truetype');
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 html {
   padding: 0;
   margin: 0;
-  font-family: 'Kugile', 'GreatVibesRegular', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', 'ItaliannoRegular', Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 28px;
 }

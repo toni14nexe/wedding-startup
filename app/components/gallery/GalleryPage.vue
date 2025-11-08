@@ -111,7 +111,7 @@ async function downloadImage() {
     <p v-motion-slide-right :duration="1500" :delay="300">
       Upload fotografija bit će omogućen na dan svatova na
       <NuxtLink to="/upload">
-        <ElButton type="primary" size="large">UPLOAD</ElButton>
+        <ElButton type="primary" size="">UPLOAD</ElButton>
       </NuxtLink>
       stranici
     </p>
@@ -208,6 +208,11 @@ img {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 18px;
   }
 }
 </style>

@@ -33,7 +33,7 @@ function getDate(dateTime: string) {
     <div class="page-container">
       <CountdownTimer v-if="config.settings.showCountdownTimer" />
       <div v-html="config.invitation" ref="invitationRef" class="invitation" />
-      <ElTimeline style="max-width: 600px">
+      <ElTimeline>
         <ElTimelineItem
           v-for="(activity, index) in config.activities"
           :key="index"
@@ -41,9 +41,13 @@ function getDate(dateTime: string) {
           placement="top"
           size="large"
         >
-          {{ activity.content }}
+          <span class="timeline-text">
+            {{ activity.content }}
+          </span>
           <br />
-          {{ activity.address }}
+          <span class="timeline-text">
+            {{ activity.address }}
+          </span>
         </ElTimelineItem>
       </ElTimeline>
     </div>
@@ -52,8 +56,17 @@ function getDate(dateTime: string) {
 
 <style lang="css" scoped>
 .invitation {
-  font-family: 'GreatVibesRegular';
+  font-family: 'ItaliannoRegular';
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1.25px;
+  font-size: 32px;
+}
+.timeline-text {
+  font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  .invitation {
+    font-size: 28px;
+  }
 }
 </style>

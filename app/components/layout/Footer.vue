@@ -33,11 +33,11 @@ onUnmounted(() => {
         <ElCol :xs="24" :sm="8">
           <ElRow class="footer-text details-wrapper-left">
             <a href="https://innova-tech.hr/" target="_blank">
-              InnovaTech, obrt za informaticke usluge
+              InnovaTech, obrt za informatičke usluge
             </a>
           </ElRow>
-          <ElRow class="footer-text details-wrapper-left">vl. Toni Kolaric</ElRow>
-          <ElRow class="footer-text details-wrapper-left">Josipa bana Jelacica 98</ElRow>
+          <ElRow class="footer-text details-wrapper-left">vl. Toni Kolarić</ElRow>
+          <ElRow class="footer-text details-wrapper-left">Josipa bana Jelačića 98</ElRow>
           <ElRow class="footer-text details-wrapper-left">Martin, Hrvatska</ElRow>
         </ElCol>
         <ElCol :xs="24" :sm="8" align="center">
@@ -69,7 +69,7 @@ onUnmounted(() => {
 
       <ElRow justify="center" class="ending-line" v-motion-slide-top :duration="1000" :delay="1500">
         <p class="footer-text">
-          Copyright © 2025 InnovaTech, obrt za informaticke usluge.
+          Copyright © 2025 InnovaTech, obrt za informatičke usluge.
           <a href="https://innova-tech.hr/" target="_blank" style="font-weight: 900">
             Web stranicu izradio InnovaTech
           </a>
