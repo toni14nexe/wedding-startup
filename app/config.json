@@ -2,10 +2,11 @@
   "TODO": "NE ZABORAVI .env",
 
   "settings": {
+    "theme": "light",
     "showCountdownTimer": true
   },
-  "title": "Lolek & Bolek",
-  "dateTime": "2025-11-08T19:00:00",
+  "title": "Lea & Dominik",
+  "dateTime": "2026-07-24T18:30:00",
   "introductionText": "Zauvijek započinje ovdje",
   "invitation": "<p>Zauvijek započinje ovdje</br>U danu punom nježnosti i radosti,</br>željeli bismo da budete uz nas</br>dok započinjemo naše zajedničko putovanje.</br></br>S vjerom, ljubavlju i osmijehom u srcu,</br>izgovorit ćemo svoje “da”</br>i proslaviti početak naše priče</br>okruženi dragim ljudima.</p>",
   "activities": [

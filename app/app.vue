@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import 'element-plus/theme-chalk/dark/css-vars.css'
 import 'element-plus/theme-chalk/display.css'
 const runtimeConfig = useRuntimeConfig()
 import config from '@/config.json'
@@ -57,7 +58,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <NuxtLayout>
+  <NuxtLayout :class="{ dark: config.settings.theme === 'dark' }">
     <NuxtPage />
   </NuxtLayout>
 </template>

@@ -138,7 +138,7 @@ async function downloadImage() {
 
     <ElRow v-if="loading.images" justify="center" class="mt-24">
       <ElIcon class="rotating-icon"><Loading /></ElIcon>
-      Učitavanje galerije . . .
+      <span style="color: var(--text-color)">Učitavanje galerije . . .</span>
     </ElRow>
 
     <ElRow
@@ -200,6 +200,7 @@ img {
   object-fit: contain;
 }
 .rotating-icon {
+  color: var(--text-color);
   animation: spin 2s linear infinite;
 }
 @keyframes spin {

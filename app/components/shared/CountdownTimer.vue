@@ -71,11 +71,12 @@ function updateCountdown() {
 
 <style scoped>
 .countdown-container {
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 2px solid white;
+  background-color: var(--transparent-background-container-color);
+  border: 2px solid var(--text-color);
   border-radius: 8px;
   opacity: 0.8;
 }
@@ -86,7 +87,6 @@ function updateCountdown() {
   padding: 12px 0;
   width: 25%;
   text-align: center;
-  color: white;
   font-size: xxx-large;
 }
 .time-zone {

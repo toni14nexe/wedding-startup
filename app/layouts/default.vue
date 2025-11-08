@@ -4,15 +4,19 @@ import Footer from '@/components/layout/Footer.vue'
 </script>
 
 <template>
-  <div class="background-black" />
-  <div class="background-image" />
-  <div class="content-wrapper">
+  <html lang="hr">
     <ClientOnly>
-      <Header />
-      <NuxtPage />
-      <Footer />
+      <div class="background-black" />
     </ClientOnly>
-  </div>
+    <div class="background-image" />
+    <div class="content-wrapper">
+      <ClientOnly>
+        <Header />
+        <NuxtPage />
+        <Footer />
+      </ClientOnly>
+    </div>
+  </html>
 </template>
 
 <style scoped>
@@ -27,14 +31,14 @@ import Footer from '@/components/layout/Footer.vue'
   z-index: 0;
 }
 .background-black {
-  background-color: black;
+  background-color: var(--background-transparent-color);
 }
 .background-image {
   background-image: url('/background.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.6;
+  opacity: var(--background-color-opacity);
 }
 .content-wrapper {
   position: relative;

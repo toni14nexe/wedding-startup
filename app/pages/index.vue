@@ -56,6 +56,7 @@ function getDate(dateTime: string) {
 
 <style lang="css" scoped>
 .invitation {
+  color: var(--text-color);
   font-family: 'ItaliannoRegular';
   font-weight: 500;
   letter-spacing: 1.25px;
