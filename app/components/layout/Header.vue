@@ -20,7 +20,9 @@ watch(
   <header class="hidden-sm-and-down" v-motion-slide-top :duration="2000">
     <ElRow class="menu" justify="center">
       <ElCol :span="8" class="menu-wrapper" v-motion-slide-left :duration="1500" :delay="1000">
-        <span class="deskop-title">{{ config.title }}</span>
+        <NuxtLink to="/" style="text-decoration: none"
+          ><span class="deskop-title">{{ config.title }}</span></NuxtLink
+        >
       </ElCol>
       <ElCol :span="8" align="center" class="menu-wrapper">
         <RouterLink
@@ -65,9 +67,9 @@ watch(
         </ElIcon>
       </ElCol>
       <ElCol align="middle" :span="16" v-motion-slide-top :duration="1500" :delay="1500">
-        <RouterLink to="/" class="mobile-title">
+        <NuxtLink to="/" class="mobile-title">
           <h2>{{ config.title }}</h2>
-        </RouterLink>
+        </NuxtLink>
       </ElCol>
       <ElCol :span="4" align="end" />
     </ElRow>
@@ -134,7 +136,7 @@ header {
 /* DESKTOP VERSION */
 .menu {
   padding: 12px 0 24px 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--transparent-background-container-color);
 }
 .menu-wrapper {
   margin: auto 0;
@@ -193,11 +195,11 @@ header {
 .mobile-header {
   height: 80px;
   padding-inline: 16px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--transparent-background-container-color);
 }
 .hamburger-icon {
   cursor: pointer;
-  color: white;
+  color: var(--hamburger-color);
 }
 .mobile-title {
   color: var(--el-color-primary);
@@ -218,10 +220,9 @@ header {
 }
 .drawer-button {
   font-family: 'Montserrat', 'ItaliannoRegular', Arial, Helvetica, sans-serif;
-  border: 1px solid black;
-  color: black;
-  --el-button-hover-border-color: var(--el-color-primary);
-  background-color: var(--el-color-primary);
+  border: 1px solid var(--drawer-btn-border-color);
+  color: var(--drawer-btn-text-color);
+  background-color: var(--drawer-btn-background-color);
   height: 45px;
   font-weight: 700;
   text-decoration: none;
@@ -229,12 +230,12 @@ header {
   border-radius: 8px;
 }
 .drawer-button:hover {
-  color: gray;
-  border-color: gray;
+  color: var(--drawer-btn-hover-text-color);
+  border-color: var(--drawer-btn-hover-text-color);
 }
 .drawer-button-active {
-  background-color: black;
-  color: white;
+  background-color: var(--drawer-btn-active-background-color);
+  color: var(--drawer-btn-active-text-color);
 }
 .drawer-button-text-wrapper {
   width: 100%;

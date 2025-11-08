@@ -83,7 +83,7 @@ onUnmounted(() => {
 footer {
   max-width: 1920px;
   padding: 32px 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--transparent-background-container-color);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

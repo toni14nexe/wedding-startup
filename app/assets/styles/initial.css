@@ -18,9 +18,36 @@ html {
   font-family: 'Montserrat', 'ItaliannoRegular', Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 28px;
+  color: black;
+
+  --el-color-primary: #000000 !important;
+  --el-color-primary-dark-1: #1a1a1a !important;
+  --el-color-primary-dark-2: #333333 !important;
+  --el-color-primary-light-1: #4d4d4d !important;
+  --el-color-primary-light-3: #808080 !important;
+  --el-color-primary-light-5: #b3b3b3 !important;
+  --el-color-primary-light-7: #d9d9d9 !important;
+  --el-color-primary-light-9: #f2f2f2 !important;
+
+  --text-color: black;
+  --background-transparent-color: white;
+  --background-color-opacity: 0.7;
+  --transparent-background-container-color: rgba(255, 255, 255, 0.7);
+  --gallery-image-bg: rgba(0, 0, 0, 0.2);
+  --hamburger-color: black;
+  --timeline-node-color: gray;
+
+  --drawer-btn-border-color: black;
+  --drawer-btn-text-color: black;
+  --drawer-btn-background-color: white;
+  --drawer-btn-hover-text-color: darkgray;
+  --drawer-btn-active-text-color: white;
+  --drawer-btn-active-background-color: black;
 }
 
-:root {
+html.dark {
+  color: white;
+
   --el-color-primary: #ffffff !important;
   --el-color-primary-dark-1: #e6e6e6 !important;
   --el-color-primary-dark-2: #cccccc !important;
@@ -29,6 +56,21 @@ html {
   --el-color-primary-light-5: #ffffff !important;
   --el-color-primary-light-7: #ffffff !important;
   --el-color-primary-light-9: #ffffff !important;
+
+  --text-color: white;
+  --background-transparent-color: black;
+  --background-color-opacity: 0.6;
+  --transparent-background-container-color: rgba(0, 0, 0, 0.5);
+  --gallery-image-bg: rgba(0, 0, 0, 0.5);
+  --hamburger-color: white;
+  --timeline-node-color: black;
+
+  --drawer-btn-border-color: white;
+  --drawer-btn-text-color: white;
+  --drawer-btn-background-color: black;
+  --drawer-btn-hover-text-color: darkgray;
+  --drawer-btn-active-text-color: black;
+  --drawer-btn-active-background-color: white;
 }
 
 body {
@@ -49,6 +91,17 @@ footer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  color: var(--text-color);
 }
 
 ::-webkit-scrollbar {
