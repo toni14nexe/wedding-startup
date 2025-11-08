@@ -7,22 +7,33 @@
 }
 
 .el-button--primary {
-  color: black !important;
+  --el-button-bg-color: black;
+  --el-button-border-color: black;
+  --el-button-text-color: white;
+  --el-button-hover-bg-color: black;
+  --el-button-hover-text-color: gray;
+  --el-button-disabled-text-color: gray !important;
 }
 
-.el-button--primary:hover {
-  color: darkgray !important;
+html.dark .el-button--primary {
+  --el-button-bg-color: white;
+  --el-button-border-color: white;
+  --el-button-text-color: black;
+  --el-button-hover-bg-color: white;
+  --el-button-hover-text-color: darkgray;
+  --el-button-disabled-text-color: darkgray !important;
 }
 
 /* TIMELINE */
 
 .el-timeline {
   padding-left: 0;
+  --el-timeline-node-color: var(--timeline-node-color) !important;
 }
 
 .el-timeline-item__content,
 .el-timeline-item__timestamp {
-  color: white !important;
+  color: var(--text-color) !important;
   letter-spacing: 1.5px;
   font-size: 16px !important;
 }
@@ -41,6 +52,10 @@
 .el-upload:hover {
   background-color: rgba(0, 0, 0, 0.75) !important;
   transition: 0.2s ease-in-out;
+}
+
+.el-upload .el-icon {
+  color: white;
 }
 
 .el-upload-list {
@@ -65,5 +80,9 @@
 
 .el-dialog {
   padding: 16px 0 !important;
-  background-color: black !important;
+  background-color: var(--el-color-primary) !important;
+}
+
+.el-dialog__headerbtn:hover .el-dialog__close {
+  color: white !important;
 }

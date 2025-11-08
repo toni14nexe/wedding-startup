@@ -10,7 +10,7 @@ const uploadState = computed(() => getUploadState(dateTime))
 
   <div v-if="uploadState === 'before'" class="info-message">
     <p v-motion-slide-left :duration="1500" :delay="300">
-      Ovdje ćete moći uploadati slike na dan svatova.
+      Ovdje ćete moći uploadati fotografija na dan svatova.
     </p>
     <p v-motion-slide-right :duration="1500" :delay="300">
       Upload će biti omogućen na dan svatova i dan poslije. Hvala na razumijevanju! ❤️

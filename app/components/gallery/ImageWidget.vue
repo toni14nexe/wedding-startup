@@ -28,7 +28,7 @@ const emit = defineEmits(['click'])
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--gallery-image-bg);
   background-image: var(--image-bg);
   background-size: contain;
   background-position: center;

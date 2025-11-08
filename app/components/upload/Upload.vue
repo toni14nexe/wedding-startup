@@ -54,7 +54,7 @@ const beforeUpload: UploadProps['beforeUpload'] = (file) => {
 
   if (!isImage) {
     ElNotification({
-      message: 'Možete uploadati samo slike (jpg, jpeg, png, webp, gif).',
+      message: 'Možete uploadati samo fotografije (jpg, jpeg, png, webp, gif).',
       type: 'error',
     })
     return false
@@ -63,7 +63,7 @@ const beforeUpload: UploadProps['beforeUpload'] = (file) => {
   const isLt4mb = file.size / 1024 / 1024 <= 4
   if (!isLt4mb) {
     ElNotification({
-      message: 'Slika ne smije biti veća od 4 MB.',
+      message: 'Fotografija ne smije biti veća od 4 MB.',
       type: 'error',
     })
     return false
@@ -95,7 +95,7 @@ async function uploadImage() {
   fileList.value = []
   uploading.value = false
   ElNotification({
-    message: 'Slike su uspješno uploadane 🎉',
+    message: 'Fotografije su uspješno uploadane 🎉',
     type: 'success',
   })
 }

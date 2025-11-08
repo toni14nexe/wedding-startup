@@ -106,7 +106,7 @@ async function downloadImage() {
 
   <div v-if="uploadState === 'before'" class="info-message">
     <p v-motion-slide-left :duration="1500" :delay="300">
-      Ovdje ćete moći pogledati slike iz svatova.
+      Ovdje ćete moći pogledati fotografije iz svatova.
     </p>
     <p v-motion-slide-right :duration="1500" :delay="300">
       Upload fotografija bit će omogućen na dan svatova na
@@ -138,7 +138,7 @@ async function downloadImage() {
 
     <ElRow v-if="loading.images" justify="center" class="mt-24">
       <ElIcon class="rotating-icon"><Loading /></ElIcon>
-      Učitavanje galerije . . .
+      <span style="color: var(--text-color)">Učitavanje galerije . . .</span>
     </ElRow>
 
     <ElRow
@@ -200,6 +200,7 @@ img {
   object-fit: contain;
 }
 .rotating-icon {
+  color: var(--text-color);
   animation: spin 2s linear infinite;
 }
 @keyframes spin {

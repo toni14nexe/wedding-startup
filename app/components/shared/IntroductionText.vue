@@ -13,7 +13,7 @@ const emit = defineEmits(['buttonClick'])
   <ElRow align="middle" class="introduction-text-container">
     <ElRow style="row-gap: 16px">
       <ElCol v-motion-slide-left :duration="1500" :delay="300" :xs="24" :lg="14">
-        <h1 style="color: white; width: max-content">{{ title }}</h1>
+        <h1 style="width: max-content">{{ title }}</h1>
       </ElCol>
       <ElCol :xs="0" :lg="10" />
       <ElCol v-if="text || text2" :xs="24" :lg="14">
@@ -53,7 +53,6 @@ const emit = defineEmits(['buttonClick'])
 h1,
 p {
   margin: 0;
-  color: white;
   font-family: 'ItaliannoRegular';
   letter-spacing: 2px;
 }
